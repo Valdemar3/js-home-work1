@@ -14,18 +14,18 @@
     Результат виводити в консоль.
  */
 
-    let price2 = 100;
-        if (1000 < price <=1900 ) {
-            console.log('Price',`${price}`,`is between 1000 and 1900`)
+    let price2 = 1000;
+        if ((1001 < price2) && (price2 <= 1900) ) {
+            console.log('Price',`${price2}`,`is between 1001 and 1900`)
         } else {
-            console.log ('Price',`${price}`,`is NOT between 1000 and 1900`)
+            console.log ('Price',`${price2}`,`is NOT between 1001 and 1900`)
         }
 
-let num1 = window.prompt("Enter the first number:");
-let num2 = window.prompt("Enter the second number:");
+// let num1 = window.prompt("Enter the first number:");
+// let num2 = window.prompt("Enter the second number:");
         
-console.log("The first number you entered is: " + num1);
-console.log("The second number you entered is: " + num2);
+// console.log("The first number you entered is: " + num1);
+// console.log("The second number you entered is: " + num2);
 
 /* 3.  Напишіть конструкцію if, щоб перевіряє, чи значення ціни товару не знаходиться 
     між 1000 та 1900 включно.
@@ -138,14 +138,3 @@ let val='+';
 
     Підказка(https://ukr-lifehacks.ed-era.com/rozdil-9/zvyazok_chislivnykiv)
 */
-
-const readline = require("readline");
-const rl = readline. createInterface({
-input: process.stdin,
-output: process.stdout,
-});
-rl. question ("What is your name?", function (answer){
-console.log(`O, so your name is ${answer}`);
-console.log("Closing the interface");
-rl.close();
-});
