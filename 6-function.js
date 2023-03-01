@@ -16,7 +16,7 @@ console.log(c);
 //--
 
 function sum(a, b) {
-    let c = a+b;
+    let c = a+b; 
     console.log(c);
 }
 
@@ -54,6 +54,11 @@ console.log(anonimFunc(a3, function (a, b) { // doesn't work normally
     let c = a + b;
     return c;
 }));
+
+function (a6, b6) { // anonimus function
+    let c6 = a6 + b6;
+    return c6;
+}
 
 // narrow function
 //() => {}
@@ -108,3 +113,44 @@ const myRequestWithDate = (field1, addedAt = Date()) => {
 
 console.log(myRequestWithDate('qw qw'));
 console.log(myRequestWithDate('qw qw', '17:55'))
+
+// callback
+
+// function first(){
+//     console.log('some text');
+// }
+
+// setTimeout(first, 5000); //first - function above, 5000 time in милисек
+
+// console.log('123');
+
+function first() {
+    setTimeout(function(){
+        console.log('First Function with delay 5s')
+    }, 5000)
+}
+
+function second() {
+        console.log('Second Function with no delay')
+}
+
+first();
+second();
+
+function someFuncWithCallback(param1, someCallBackFunc) {
+    console.log(`Here is my param: ${param1}`);
+    someCallBackFunc();
+}
+
+someFuncWithCallback('wqwqwqwqwqwq', function() {
+    console.log('Here is TEXT from someFuncWithCallback')
+})
+
+function it (testDescription, testAction) {
+    console.log(`Test: ${testDescription}`)
+    testAction();
+};
+
+it ('Auth', () => {
+    console.log('Some tests')
+})

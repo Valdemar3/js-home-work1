@@ -20,10 +20,10 @@
       }
 
     const hWf2 = (price2) => {
-    if ((1001 < price2) && (price2 <= 1900) ) {
-        console.log('Price',`${price2}`,`is between 1001 and 1900`)
+    if ((1000 <= price2) && (price2 <= 1900) ) {
+        console.log('Price',`${price2}`,`is between 1000 and 1900`)
     } else {
-        console.log ('Price',`${price2}`,`is NOT between 1001 and 1900`)
+        console.log ('Price',`${price2}`,`is NOT between 1000 and 1900`)
     }
 }
    hWf2(randomN(1,2000));
