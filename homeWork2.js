@@ -162,3 +162,28 @@ replaceV('regular expression')
 
     Підказка(https://ukr-lifehacks.ed-era.com/rozdil-9/zvyazok_chislivnykiv)
 */
+
+const metrytoKm = (metr) => {
+    let km = metr/1000;
+        function addEnding(number) {
+            if (number === Math.round(number)) {
+                if (number >= 5 && number <= 19) {
+                    return "iв"
+                } else if (number % 10 === 1) {
+                    return " "
+                } else if (number ===2 || number === 3 || number === 4 || (number % 10 && number % 10 <= 4)) {
+                    return "u"
+                } else if (number % 10 === 0 || number % 10 >= 5 && number % 10 <= 10) {
+                    return "ib"
+                }
+            }
+            else {
+                return 'а'
+            }
+        }
+        console.log(metr + ' метр' + addEnding(metr) + ' = ' + km + 'kilometer' + addEnding(km))
+}
+
+metrytoKm(5000);
+
+console.log(Math.round(111.9))
