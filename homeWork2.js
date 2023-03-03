@@ -13,13 +13,20 @@
  2.  Напишіть умовну конструкцію if, що перевіряє, чи знаходиться значення ціни товару між 1000 та 1900 включно.
     Результат виводити в консоль.
  */
+    const randomN = (min, max) => {
+        // получить случайное число от (min-0.5) до (max+0.5)
+        let rand = min - 0.5 + Math.random() * (max - min + 1);
+        return Math.round(rand);
+      }
 
-    let price2 = 1901;
-        if ((1000 <= price2) && (price2 <= 1900) ) {
-            console.log('Price',`${price2}`,`is between 1000 and 1900`)
-        } else {
-            console.log ('Price',`${price2}`,`is NOT between 1000 and 1900`)
-        }
+    const hWf2 = (price2) => {
+    if ((1000 <= price2) && (price2 <= 1900) ) {
+        console.log('Price',`${price2}`,`is between 1000 and 1900`)
+    } else {
+        console.log ('Price',`${price2}`,`is NOT between 1000 and 1900`)
+    }
+}
+   hWf2(randomN(1,2000));
 
 // let num1 = window.prompt("Enter the first number:");
 // let num2 = window.prompt("Enter the second number:");
@@ -29,21 +36,30 @@
 
 /* 3.  Напишіть конструкцію if, щоб перевіряє, чи значення ціни товару не знаходиться 
     між 1000 та 1900 включно.
-    Реалізуйте два варіанти, один з оператором НЕ !, а інший без цього оператора.
+    Реалізуйте два варіанти, один з оператором НЕ !, 
+    а інший без цього оператора.
     Результат виводити в консоль.
 */
-let price3 = 1900;
 
-if ((price3>1000) && (price3 <=1900)) {
-    console.log('Price',`${price3}`,`is between 1000 and 1900`)
-} else {
-    console.log ('Price',`${price3}`,`is NOT between 1000 and 1900`)
+function randomN (min, max) {
+    // получить случайное число от (min-0.5) до (max+0.5)
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
+    return Math.round(rand);
+  }
+
+const hWf3 = (price3) => {
+    if ( !(1001 > price3) && !(price3 > 1900)) {
+        console.log('Price',`${price3}`,`is between 1001 and 1900`)
+    } else {
+        console.log ('Price',`${price3}`,`is NOT between 1001 and 1900`)
+    }
 }
+hWf3(randomN(900,1901));
 
 /*4.  За номером пори року вивести назву цієї пори року використовуючи оператор if-else-if
     Результат виводити в консоль.
 */
-let time = '3333';
+const seasons = (time) => {
     if (time=='sum') {
         console.log('Time',`${time}`,'is Summer')
 } else if (time =='aut') {
@@ -53,6 +69,7 @@ let time = '3333';
 } else if (time == 'win') {
     console.log('Time',`${time}`,'is Winter')
 } else console.log('Not a Time')
+}
 
 /*5.  Задано 3 числа (a, b, c), які не рівні між собою.
     Визначити середнє мід цими трьома числами
@@ -60,10 +77,8 @@ let time = '3333';
     Використати вкладені оператори if
     Результат виводити в консоль.
 */
-let a=3,
-    b=2,
-    c=-4444;
-    max=0;
+const whichMore = (a,b,c) => {
+    let max=0;
     if (a>b){
         max = a;
     } else max = b;
@@ -71,35 +86,42 @@ let a=3,
         max = c;
     }
     console.log(max);
+}
+
+whichMore(2,3,4)
 
 /*6.  Задано номер дня тижня.
     За заданим номером вивести назву дня тижня використовуючи switch.
     Результат виводити в консоль.
 */
-let dayNumber = 6;
+
+const tellMeDay = (dayNumber) => {
     switch(dayNumber) {
         case 1:
-            console.log('Day number is',`${dayNumber}`,'is nmeans today is Monday')
+            console.log('Day number is',`${dayNumber}`,'is means today is Monday')
         break;
         case 2:
-            console.log('Day number is',`${dayNumber}`,'is nmeans today is Tuesday')
+            console.log('Day number is',`${dayNumber}`,'is means today is Tuesday')
         break;
         case 3:
-            console.log('Day number is',`${dayNumber}`,'is nmeans today is Wednesday')
+            console.log('Day number is',`${dayNumber}`,'is means today is Wednesday')
         break;
         case 4:
-            console.log('Day number is',`${dayNumber}`,'is nmeans today is Thursday')
+            console.log('Day number is',`${dayNumber}`,'is means today is Thursday')
         break;
         case 5:
-            console.log('Day number is',`${dayNumber}`,'is nmeans today is Friday')
+            console.log('Day number is',`${dayNumber}`,'is means today is Friday')
         break;
         case 6:
-            console.log('Day number is',`${dayNumber}`,'is nmeans today is Saturday')
+            console.log('Day number is',`${dayNumber}`,'is means today is Saturday')
         break;
         case 7:
-            console.log('Day number is',`${dayNumber}`,'is nmeans today is Sunday')
+            console.log('Day number is',`${dayNumber}`,'is means today is Sunday')
         break;
     }
+}
+
+tellMeDay(5);
 
 /**
 7.  За допомогою switch реалізуйте обчислення виразу, передаючи у switch, як параметр, 
@@ -127,8 +149,10 @@ let val='+';
 8.*  Використовуючи властивості рядків (тип string), 
     та регулярний вираз (regular expression) видалити голосні букви зі слова.
  */
-
-  console.log('regular expression'.replace( /[euaio]/g, ":"))
+const replaceV  = (value1) => {
+    console.log(value1.replace( /[euaio]/g, ":"))
+}
+replaceV('regular expression')
 
 /* 9.*  Використовуючи оператор if реалізувати логіку переводу метрів в кілометри,
     так щоб в консоль виводився результат обчислень з правильним закнченням.
@@ -138,3 +162,28 @@ let val='+';
 
     Підказка(https://ukr-lifehacks.ed-era.com/rozdil-9/zvyazok_chislivnykiv)
 */
+
+const metrytoKm = (metr) => {
+    let km = metr/1000;
+        function addEnding(number) {
+            if (number === Math.round(number)) {
+                if (number >= 5 && number <= 19) {
+                    return "iв"
+                } else if (number % 10 === 1) {
+                    return " "
+                } else if (number ===2 || number === 3 || number === 4 || (number % 10 && number % 10 <= 4)) {
+                    return "u"
+                } else if (number % 10 === 0 || number % 10 >= 5 && number % 10 <= 10) {
+                    return "ib"
+                }
+            }
+            else {
+                return 'а'
+            }
+        }
+        console.log(metr + ' метр' + addEnding(metr) + ' = ' + km + 'kilometer' + addEnding(km))
+}
+
+metrytoKm(5000);
+
+console.log(Math.round(111.9))
